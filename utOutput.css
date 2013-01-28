@@ -1,0 +1,66 @@
+body {
+    font-family: "Segoe UI", Optima, sans-serif;
+}
+
+#progress {
+    position: relative;
+    width: 800px;
+    border: solid 2px #000;
+    border-radius: 22px;
+    height: 40px;
+    background: #fff;
+    overflow: hidden;
+}
+#success {
+    display: inline-block;
+    width: 0px;
+    height: 40px;
+    border-right: solid 1px rgba(255, 255, 255, 0.25);
+    background: #6f3;
+}
+#failure {
+    display: none;
+    left: 0px;
+    width: 0px;
+    height: 40px;
+    border-left: solid 1px rgba(0, 0, 0, 0.25);
+    margin-left: -2px;
+    background: #f00;
+}
+#info {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 800px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+#tests {
+    margin: 1em 0 0 0;
+    padding: 0;
+    border: solid 2px #000;
+    list-style: none;
+    max-height: 300px;
+    overflow: scroll;
+}
+#tests > li {
+    margin: 0;
+    padding: 1px 8px;
+    border-bottom: solid 1px #000;
+}
+#tests > li:last-child {
+    border-bottom: none 0px;
+}
+#tests > li.success {
+    background: #efd;
+    color: #070;
+}
+
+#tests > li.failure {
+    background: #fcb;
+    color: #800;
+    font-weight: bold;
+}
