@@ -636,6 +636,7 @@ addAssertTestsForMethod(engine, "shouldBeTruthy", 1, false, undefined, "% is not
 addAssertTestsForMethod(engine, "shouldBeFalse", false, 0, undefined, "% is not false");
 addAssertTestsForMethod(engine, "shouldBeFalsy", 0, true, undefined, "% is not falsy");
 addAssertTestsForMethod(engine, "shouldBeInstanceOf", new testClass(), testClass, testClass, "% is not of correct type");
+addAssertTestsForMethod(engine, "shouldBeArray", [1,2,3], "1,2,3", undefined, "% is not an array");
 
 // Requirement 10. Events should be triggered on the window object at key points in time
 // -- When run() is called, the lbrtwUtEngineStarting event should be triggered

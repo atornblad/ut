@@ -9,6 +9,19 @@ var utEngine = function() {
 };
 
 // private function, not exposed
+var isArray;
+if (Array.isArray) {
+    isArray = function(obj) {
+        return Array.isArray(obj);
+    }
+} else {
+    isArray = function() {
+        Object.prototype.toString.call(obj) == "[object Array]"
+    }
+}
+
+
+// private function, not exposed
 var triggerEvent = function(name, properties) {
     var event = document.createEvent("HTMLEvents");
     event.initEvent(name, true, false);
@@ -309,6 +322,12 @@ asserter.prototype = {
     shouldBeInstanceOf : function(theClass) {
         if (!(this.target instanceof theClass)) {
             throw this.valueName + " is not of correct type";
+        }
+    },
+    
+    shouldBeArray : function() {
+        if (!isArray(this.target)) {
+            throw this.valueName + " is not an array";
         }
     }
 };
